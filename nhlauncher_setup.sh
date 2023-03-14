@@ -15,6 +15,19 @@ printf """\e[1;32m
 printf "\n\e[1;33m[i] Setting up NHLauncher!\e[0m\n"
 
 
+# RP="deb [arch=amd64] http://deb.debian.org/debian/ bullseye main non-free contrib"
+
+# # Check if the line already exists in /etc/apt/sources.list
+# if grep -qF "$NEW_LINE" /etc/apt/sources.list
+# then
+#    printf "\n\e[1;33m[i] /etc/apt/sources.list is ok!\e[0m\n"
+# else
+#     # Add the line to /etc/apt/sources.list
+#     echo "$RP" | sudo tee -a /etc/apt/sources.list > /dev/null
+#     printf "\n\e[1;33m[i] Edited /etc/apt/sources.list!\e[0m\n"
+# fi
+
+
 # Download all tools
 printf "\n\e[1;33m[i] Downloading tools...\e[0m\n"
 
