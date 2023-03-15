@@ -27,10 +27,12 @@ cd /root
 
 # OneShot
 
+rm -r -f OneShot
 git clone https://github.com/drygdryg/OneShot
 
 # Z-Phisher
 
+rm -r -f zphisher
 git clone --depth=1 https://github.com/htr-tech/zphisher
 cd zphisher
 chmod +x zphisher.sh 
@@ -38,6 +40,7 @@ cd /root
 
 # Modlishka
 
+rm -r -f Modlishka
 git clone https://github.com/drk1wi/Modlishka
 cd Modlishka
 make
@@ -45,8 +48,9 @@ cd /root
 
 # PRET
 
+rm -r -f PRET
 git clone https://github.com/RUB-NDS/PRET
-python3 -m pip install colorama pysnmp
+python3 -m pip install colorama pysnmp --break-system-packages
 
 
 printf "\n\e[1;33m[i] Setup completed! Closing in 5s...\e[0m\n"
