@@ -50,7 +50,7 @@ cd /root
 
 rm -r -f PRET
 git clone https://github.com/RUB-NDS/PRET
-apt install python3-colorama python3-pysmi
+apt install python3-colorama python3-pysmi python3-pysnmp4
 
 
 printf "\n\e[1;33m[i] Setup completed! Closing in 5s...\e[0m\n"
