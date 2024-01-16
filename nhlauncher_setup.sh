@@ -28,7 +28,7 @@ cd /root
 # OneShot
 
 rm -r -f OneShot
-git clone https://github.com/drygdryg/OneShot
+git clone https://github.com/rofl0r/OneShot
 
 # Z-Phisher
 
