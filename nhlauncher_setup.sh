@@ -53,14 +53,14 @@ git clone https://github.com/RUB-NDS/PRET
 apt install python3-colorama python3-pysmi python3-pysnmp4
 
 # Gophish
-
+rm -r -f gophish
 git clone https://github.com/gophish/gophish
 cd gophish
 go build
 cd /root
 
 # Maskphish
-
+rm -r -f maskphish
 git clone https://github.com/jaykali/maskphish
 
 printf "\n\e[1;33m[i] Setup completed! Closing in 5s...\e[0m\n"
