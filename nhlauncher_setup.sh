@@ -33,6 +33,7 @@ packages=(
     powershell-empire backdoor-factory mimikatz evil-winrm proxychains4 nishang exe2hexbat weevely dbd sbd dns2tcp iodine miredo proxytunnel ptunnel pwnat sslh stunnel4 
     udptunnel laudanum webacoo yara unhide rkhunter foremost ssdeep autopsy galleta bulk-extractor chkrootkit binwalk hashdeep cutycapt metagoofil pipal
     bluez bluez-tools bluez-obex libbluetooth3 sox bluetooth libglib2.0*-dev python3-dbus python3-bluez coreutils python3-colorama python3-pysmi python3-pysnmp4
+    cmake libnl-route-3-dev
 )
 
 check_and_remove() {
@@ -81,6 +82,10 @@ cd /root
 
 # Maskphish
 check_and_remove https://github.com/jaykali/maskphish
+
+# Applejuice
+check_and_remove https://github.com/ECTO-1A/AppleJuice
+python3 -m pip install -r /root/AppleJuice/requirements.txt
 
 # Setup bluetooth shit
 printf "\n\e[1;33m[i] Setting up Bluetooth Toolkit, please wait!\e[0m\n"
