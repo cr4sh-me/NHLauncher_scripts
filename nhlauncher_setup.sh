@@ -16,6 +16,8 @@ printf "\n\e[1;33m[i] Setting up NHLauncher, please wait!\e[0m\n"
 
 sleep 3
 
+counter = 1
+
 # Define an array of packages
 packages=(
     libnl-3-dev libnl-genl-3-dev tlp python3-pyudev python3-evdev libsystemd-dev libglib2.0-dev libbluetooth-dev set wapiti sqlsus libswitch-perl pdf-parser 
@@ -48,11 +50,12 @@ check_and_remove() {
 # Install missing packages
 for package in "${packages[@]}"; do
     if ! dpkg -l | grep -q "$package"; then
-        printf "\n\e[1;33m[i] Installing package: \e[1;92m$package\e[0m"
+        printf "\n\e[1;33m[i] Installing package ($counter/${#packages[@]}): \e[1;92m$package\e[0m"
         apt install -qq -y "$package" > /root/nhl_installer_log 2>&1
     else
-        printf "\n\e[1;33m[i] Already installed: \e[1;96m$package\e[0m"
+        printf "\n\e[1;33m[i] Already installed ($counter/${#packages[@]}): \e[1;96m$package\e[0m"
     fi
+    ((counter++))
 done
 
 # Clone tools from GitHub
