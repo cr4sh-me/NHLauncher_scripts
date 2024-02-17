@@ -35,7 +35,7 @@ packages=(
     powershell-empire backdoor-factory mimikatz evil-winrm proxychains4 nishang exe2hexbat weevely dbd sbd dns2tcp iodine miredo proxytunnel ptunnel pwnat sslh stunnel4 
     udptunnel laudanum webacoo yara unhide rkhunter foremost ssdeep autopsy galleta bulk-extractor chkrootkit binwalk hashdeep cutycapt metagoofil pipal
     bluez bluez-tools bluez-obex libbluetooth3 sox bluetooth libglib2.0*-dev python3-dbus python3-bluez coreutils python3-colorama python3-pysmi python3-pysnmp4
-    cmake libnl-route-3-dev
+    cmake libnl-route-3-dev maryam dotdotpwn whois urlcrazy dnstwist
 )
 
 check_and_remove() {
@@ -93,20 +93,41 @@ python3 -m pip install -r /root/AppleJuice/requirements.txt
 # Setup bluetooth shit
 printf "\n\e[1;33m[i] Setting up Bluetooth Toolkit, please wait!\e[0m\n"
 
-check_and_remove https://github.com/yesimxev/carwhisperer-0.2 $carwhisperer_path
+check_and_remove https://github.com/yesimxev/carwhisperer-0.2
 cd /root/carwhisperer
 make
 make install
 
-check_and_remove https://github.com/yesimxev/bt_audit $bt_audit_path
+check_and_remove https://github.com/yesimxev/bt_audit
 cd /root/bt_audit/src
 make
 cp rfcomm_scan /usr/bin/
 
+check_and_remove https://github.com/mrh0wl/Cloudmare
+
+check_and_remove https://github.com/m0rtem/CloudFail
+cd /root/CloudFail
+pip3 install -r requirements.txt
+cd /root
+
+check_and_remove https://github.com/aboul3la/Sublist3r
+
+check_and_remove https://github.com/thewhiteh4t/pwnedOrNot
+cd pwnedOrNot
+chmod +x install.sh
+./install.sh
+cd /root
+
+check_and_remove https://github.com/anouarbensaad/vulnx
+cd vulnx
+chmod +x install.sh
+./install.sh
+cd /root
+
 if [[ -f /usr/lib/libglibutil.so ]]; then 
     printf "\n\e[1;33m[i] Libglibutil is installed! %s\e[0m"
 else 
-    check_and_remove https://github.com/yesimxev/libglibutil $libutil_path
+    check_and_remove https://github.com/yesimxev/libglibutil
     cd /root/libglibutil
     make
     make install-dev
@@ -115,7 +136,7 @@ fi
 if [[ -f /usr/lib/libgbinder.so ]]; then 
     printf "\n\e[1;33m[i] Libgbinder is installed! %s\e[0m"
 else 
-    check_and_remove https://github.com/yesimxev/libgbinder $libgbinder_path
+    check_and_remove https://github.com/yesimxev/libgbinder
     cd /root/libgbinder
     make
     make install-dev
@@ -124,7 +145,7 @@ fi
 if [[ -f /usr/sbin/bluebinder ]]; then
     printf "\n\e[1;33m[i] Bluebinder is installed! %s\e[0m"
 else 
-    check_and_remove https://github.com/yesimxev/bluebinder $bluebinder_path
+    check_and_remove https://github.com/yesimxev/bluebinder
     cd /root/bluebinder
     make
     make install
@@ -133,7 +154,7 @@ fi
 if [[ -f /root/badbt/btk_server.py ]]; then 
     printf "\n\e[1;33m[i] BadBT is installed! %s\e[0m"
 else 
-    check_and_remove https://github.com/yesimxev/badbt $badbt_path
+    check_and_remove https://github.com/yesimxev/badbt
     cp /root/badbt/org.thanhle.btkbservice.conf /etc/dbus-1/system.d/
 fi
 
@@ -143,6 +164,8 @@ else
     printf "\n\e[1;33m[i] Patching Bluetooth service... %s\e[0m"
     sed -i -e 's/# NOPLUGIN_OPTION=.*/NOPLUGIN_OPTION=\"--noplugin=input\"/g' /etc/init.d/bluetooth
 fi
+
+pip install bopscrk
 
 printf "\n\n\e[1;33m[i] Setup completed! Closing in 5s...\e[0m\n"
 sleep 5
