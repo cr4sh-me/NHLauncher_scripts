@@ -16,7 +16,7 @@ printf "\n\e[1;33m[i] Setting up NHLauncher, please wait!\e[0m\n"
 
 sleep 3
 
-counter = 1
+counter=1
 
 # Define an array of packages
 packages=(
