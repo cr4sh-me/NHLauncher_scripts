@@ -124,6 +124,9 @@ chmod +x install.sh
 ./install.sh
 cd /root
 
+check_and_remove https://github.com/scipag/vulscan
+ln -s `pwd`/vulscan /usr/share/nmap/scripts/vulscan
+
 if [[ -f /usr/lib/libglibutil.so ]]; then 
     printf "\n\e[1;33m[i] Libglibutil is installed! %s\e[0m"
 else 
