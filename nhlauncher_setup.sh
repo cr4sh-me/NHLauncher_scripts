@@ -35,7 +35,7 @@ packages=(
     powershell-empire backdoor-factory mimikatz evil-winrm proxychains4 nishang exe2hexbat weevely dbd sbd dns2tcp iodine miredo proxytunnel ptunnel pwnat sslh stunnel4 
     udptunnel laudanum webacoo yara unhide rkhunter foremost ssdeep autopsy galleta bulk-extractor chkrootkit binwalk hashdeep cutycapt metagoofil pipal
     bluez bluez-tools bluez-obex libbluetooth3 sox bluetooth libglib2.0*-dev python3-dbus python3-bluez coreutils python3-colorama python3-pysmi python3-pysnmp4
-    cmake libnl-route-3-dev maryam dotdotpwn whois urlcrazy dnstwist setoolkit
+    cmake libnl-route-3-dev maryam dotdotpwn whois urlcrazy dnstwist setoolkit slowloris cargo
 )
 
 check_and_remove() {
@@ -126,6 +126,8 @@ cd /root
 
 check_and_remove https://github.com/scipag/vulscan
 ln -s `pwd`/vulscan /usr/share/nmap/scripts/vulscan
+
+cargo install rustscan
 
 if [[ -f /usr/lib/libglibutil.so ]]; then 
     printf "\n\e[1;33m[i] Libglibutil is installed! %s\e[0m"
