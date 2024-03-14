@@ -127,7 +127,11 @@ cd /root
 check_and_remove https://github.com/scipag/vulscan
 ln -s `pwd`/vulscan /usr/share/nmap/scripts/vulscan
 
-cargo install rustscan
+check_and_remove https://github.com/RustScan/RustScan
+cd /RustScan
+cargo build --release
+ln -s /root/RustScan/target/release/rustscan /usr/bin/rustscan
+cd /root
 
 if [[ -f /usr/lib/libglibutil.so ]]; then 
     printf "\n\e[1;33m[i] Libglibutil is installed! %s\e[0m"
