@@ -37,7 +37,7 @@ packages=(
     powershell-empire backdoor-factory mimikatz evil-winrm proxychains4 nishang exe2hexbat weevely dbd sbd dns2tcp iodine miredo proxytunnel ptunnel pwnat sslh stunnel4 
     udptunnel laudanum webacoo yara unhide rkhunter foremost ssdeep autopsy galleta bulk-extractor chkrootkit binwalk hashdeep cutycapt metagoofil pipal
     bluez bluez-tools bluez-obex libbluetooth3 sox bluetooth libglib2.0*-dev python3-dbus python3-bluez coreutils python3-colorama python3-pysmi python3-pysnmp4
-    cmake libnl-route-3-dev maryam dotdotpwn whois urlcrazy dnstwist setoolkit slowloris cargo
+    cmake libnl-route-3-dev maryam dotdotpwn whois urlcrazy dnstwist setoolkit slowloris cargo ubertooth
 )
 
 check_and_remove() {
