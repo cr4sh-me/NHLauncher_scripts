@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 clear
 
 printf """\e[1;32m
@@ -128,7 +130,7 @@ check_and_remove https://github.com/scipag/vulscan
 ln -s `pwd`/vulscan /usr/share/nmap/scripts/vulscan
 
 check_and_remove https://github.com/RustScan/RustScan
-cd /RustScan
+cd /root/RustScan
 cargo build --release
 ln -s /root/RustScan/target/release/rustscan /usr/bin/rustscan
 cd /root
